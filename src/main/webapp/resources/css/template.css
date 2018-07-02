@@ -72,7 +72,7 @@ a {
 	height: 200px;
 	border-radius: 10px;
 	background: no-repeat center;
-	background-size: cover;
+	background-size: contain;
 }
 
 #albumCover {

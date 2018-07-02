@@ -33,7 +33,7 @@ public class MainController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getHomePage() {
 		ModelAndView modelAndView = new ModelAndView("homeTab");
-		modelAndView.addObject("songs", songRepository.findById(31L));
+		modelAndView.addObject("songs", songRepository.findAll());
 		modelAndView.addObject("albums", albumRepository.findAll());
 		modelAndView.addObject("artists", artistRepository.findAll());
 		return modelAndView;
