@@ -1,0 +1,176 @@
+.nav-tabs .nav-link {
+	border: none;
+}
+
+.nav-item .nav-link.active {
+	border: none;
+	box-shadow: inset 0 -3px 0 0 rgb(220, 100, 100);
+	transition: box-shadow 0.15s ease-in-out;
+}
+
+.navbar-brand:hover {
+	color: rgb(220, 100, 100) !important;
+}
+
+/*region Form control*/
+.form-control {
+	padding: 0 0.7em;
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	border-radius: 0.7em;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0.1em 0.2em 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0.1em 0.2em 0 rgba(0, 0, 0, 0.2), 0 0 0.3em 0 rgba(150, 0, 0, 0.3);
+}
+/*endregion*/
+
+label {
+	margin-bottom: 0;
+}
+
+.input-group-sm > .form-control, .input-group-sm > .input-group-append > .btn {
+	padding: 0 0.7em;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.7em;
+}
+.input-group-sm > .input-group-append > .btn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/*region Custom file*/
+.custom-file {
+	height: 2rem;
+}
+
+.custom-file-input {
+	width: 1px;
+	height: inherit;
+}
+
+.custom-file-label {
+	padding: 0 0.6em 0;
+	width: 100%;
+	height: inherit;
+	line-height: 2rem;
+	border-radius: 0.7em;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0.1em 0.2em 0 rgba(0, 0, 0, 0.1);
+}
+
+.custom-file-label:focus {
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0.1em 0.2em 0 rgba(0, 0, 0, 0.2), 0 0 0.3em 0 rgba(150, 0, 0, 0.3);
+}
+
+.custom-file-label::after {
+	padding: 0.2em 0.7em;
+	height: auto;
+	font-size: 1rem;
+	color: rgb(70, 70, 70);
+	border-radius: 0.7em;
+	background: rgb(240, 240, 240);
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 0, 0.5);
+}
+
+.custom-file-label:hover::after {
+	color: rgb(220, 100, 100);
+	cursor: pointer;
+}
+/*endregion*/
+
+/*region Button*/
+.btn {
+	padding: 0 0.7em;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	color: rgb(70, 70, 70);
+	border-radius: 0.7em;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background: rgb(240, 240, 240);
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+	color: rgb(220, 100, 100);
+	cursor: pointer;
+}
+
+.btn:active {
+	background: rgb(235, 235, 235);
+	box-shadow: inset 0 0.15em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.05em 0.3em 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn:focus {
+	outline: none;
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+	color: rgb(255, 255, 255);
+	background: rgb(120, 200, 250);
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 100, 0.5);
+}
+
+.btn-primary:hover {
+	color: rgb(220, 100, 100) !important;
+	background: rgb(120, 200, 250);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 100, 0.5);
+}
+
+.btn-primary:active {
+	background: rgb(120, 200, 250) !important;
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+	box-shadow: inset 0 0.2em 0.3em 0 rgba(255, 255, 255, 1), inset 0 -0.15em 0.3em 0 rgba(0, 0, 0, 0.5);
+}
+
+/*endregion*/
+
+/*region Modal*/
+.modal-sm {
+	max-width: 350px;
+}
+
+.modal-content {
+	border-radius: 0.5rem;
+}
+
+.modal-header {
+	padding: 0.5rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background: linear-gradient(0, rgb(230, 230, 230), rgb(245, 245, 245));
+}
+
+.modal-title {
+	padding-left: 0.5rem;
+	line-height: 1;
+}
+
+.modal-close {
+	width: 1rem;
+	height: 1rem;
+	line-height: 100%;
+	border-radius: 50%;
+	background: linear-gradient(0, rgb(230, 100, 100), rgb(240, 150, 150));
+	cursor: pointer;
+}
+
+.modal-body {
+	padding: 1rem;
+}
+
+.modal-footer {
+	padding: 1rem;
+	border: none;
+}
+
+/*endregion*/
