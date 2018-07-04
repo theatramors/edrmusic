@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" language = "java" %>
+<%@ page contentType = "text/html;charset=UTF-8" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored = "false" %>
 
@@ -6,7 +6,7 @@
 
 <div class = "row m-0 pl-3 pr-3 p-2">
 	<div class = "col p-0">
-		<h2>Popular artists</h2>
+		<h4 class="mb-0 border-bottom">Popular artists</h4>
 	</div>
 </div>
 <div class = "row m-0 p-0">
@@ -22,7 +22,7 @@
 </div>
 <div class = "row m-0 pl-3 pr-3 p-2">
 	<div class = "col p-0">
-		<h2>Popular albums</h2>
+		<h4 class="mb-0 border-bottom">Popular albums</h4>
 	</div>
 </div>
 <div class = "row m-0 p-0">
@@ -40,7 +40,7 @@
 </div>
 <div class = "row m-0 pl-3 pr-3 p-2">
 	<div class = "col p-0">
-		<h2>Popular songs</h2>
+		<h4 class="mb-0 border-bottom">Popular songs</h4>
 	</div>
 </div>
 <c:forEach var = "song" items = "${songs}" varStatus = "loop">

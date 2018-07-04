@@ -8,4 +8,6 @@ public interface ArtistService {
     List<Artist> getArtists(int start, int max);
     
     Artist findById(Long id);
+    
+    byte[] getArtistLogo(Long id);
 }

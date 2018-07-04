@@ -9,7 +9,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ArtistServiceImpl implements ArtistService {
@@ -26,5 +28,11 @@ public class ArtistServiceImpl implements ArtistService {
     @Override
     public Artist findById(Long id) {
         return repository.findById(id).orElse(null);
+    }
+    
+    @Override
+    @Transactional
+    public byte[] getArtistLogo(Long id) {
+        return Objects.requireNonNull(repository.findById(id).orElse(null)).getFileContent().getFileContent();
     }
 }

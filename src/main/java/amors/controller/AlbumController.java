@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -28,7 +29,8 @@ public class AlbumController {
     
     // TODO Переделать получение логотипа артиста
     @RequestMapping(value = "/album/{id}/cover", method = RequestMethod.GET)
+    @ResponseBody
     public byte[] getAlbumCover(@PathVariable Long id) {
-        return service.findById(id).getFileContent().getFileContent();
+        return service.getAlbumCover(id);
     }
 }
