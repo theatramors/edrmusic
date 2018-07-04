@@ -1,10 +1,7 @@
 package amors.repository;
 
 import amors.entity.Artist;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-public interface ArtistRepository extends CrudRepository<Artist, Long> {
-    // List<Artist> findTop5();
+public interface ArtistRepository extends JpaRepository<Artist, Long> {
 }

@@ -2,39 +2,37 @@ package amors.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "Album")
+@Table(name = "album")
 public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Long id;
     
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
     
-    @Lob
-    @Column(name = "Image")
-    private byte[] image;
-    
     @ManyToOne
-    @JoinColumn(name = "ArtistId")
+    @JoinColumn(name = "artist_id")
     private Artist artist;
     
     @OneToMany
-    @JoinColumn(name = "AlbumId")
+    @JoinColumn(name = "album_id")
     private Set<Song> songs;
+    
+    @ManyToOne
+    @JoinColumn(name = "file_content_id")
+    private FileContent fileContent;
     
     public Long getId() {
         return id;
@@ -52,14 +50,6 @@ public class Album {
         this.name = name;
     }
     
-    public byte[] getImage() {
-        return image;
-    }
-    
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-    
     public Artist getArtist() {
         return artist;
     }
@@ -74,5 +64,13 @@ public class Album {
     
     public void setSongs(Set<Song> songs) {
         this.songs = songs;
+    }
+    
+    public FileContent getFileContent() {
+        return fileContent;
+    }
+    
+    public void setFileContent(FileContent fileContent) {
+        this.fileContent = fileContent;
     }
 }

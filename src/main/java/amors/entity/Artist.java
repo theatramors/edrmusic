@@ -6,31 +6,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "Artist")
+@Table(name = "artist")
 public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Long id;
     
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
     
-    @Column(name = "Image")
-    private byte[] image;
-    
     @OneToMany
-    @JoinColumn(name = "ArtistId")
+    @JoinColumn(name = "artist_id")
     private Set<Album> albums;
     
     @OneToMany
-    @JoinColumn(name = "ArtistId")
+    @JoinColumn(name = "artist_id")
     private Set<Song> songs;
+    
+    @ManyToOne
+    @JoinColumn(name = "file_content_id")
+    private FileContent fileContent;
     
     public Long getId() {
         return id;
@@ -48,14 +50,6 @@ public class Artist {
         this.name = name;
     }
     
-    public byte[] getImage() {
-        return image;
-    }
-    
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-    
     public Set<Album> getAlbums() {
         return albums;
     }
@@ -70,5 +64,13 @@ public class Artist {
     
     public void setSongs(Set<Song> songs) {
         this.songs = songs;
+    }
+    
+    public FileContent getFileContent() {
+        return fileContent;
+    }
+    
+    public void setFileContent(FileContent fileContent) {
+        this.fileContent = fileContent;
     }
 }
