@@ -1,1 +1,1 @@
-# edrmusic-app
+# EDR.Music application
