@@ -1,36 +1,38 @@
 package amors.controller;
 
+import amors.entity.Album;
 import amors.service.api.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping(value = "/albums")
 public class AlbumController {
+    private final AlbumService albumService;
+
     @Autowired
-    private AlbumService service;
-    
-    @RequestMapping(value = "/albums", method = RequestMethod.GET)
-    public ModelAndView getAlbums() {
-        ModelAndView modelAndView = new ModelAndView("albumsTab");
-        modelAndView.addObject("albums", service.getAlbums(0, 20));
-        return modelAndView;
+    public AlbumController(AlbumService albumService) {
+        this.albumService = albumService;
     }
-    
-    // TODO Реализовать вкладку с альбомом
-    @RequestMapping(value = "/album/{id}", method = RequestMethod.GET)
-    public ModelAndView getAlbum(@PathVariable Long id) {
-        return new ModelAndView();
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<Album> getAlbums() {
+        return albumService.getAlbums(0, 500);
     }
-    
-    // TODO Переделать получение логотипа артиста
-    @RequestMapping(value = "/album/{id}/cover", method = RequestMethod.GET)
-    @ResponseBody
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Album getAlbum(@PathVariable Long id) {
+        return albumService.findById(id);
+    }
+
+    @RequestMapping(value = "/{id}/cover", method = RequestMethod.GET)
     public byte[] getAlbumCover(@PathVariable Long id) {
-        return service.getAlbumCover(id);
+        return albumService.getAlbumCover(id);
     }
 }

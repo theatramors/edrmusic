@@ -53,7 +53,7 @@
 			</span>
 		</div>
 		<div class = "col-4 p-0">
-			<a class = "hover-light-red" href = ""><c:out value = "${song.songTitle}" /></a>
+			<a class = "hover-light-red" href = ""><c:out value = "${song.name}" /></a>
 		</div>
 		<div class = "col-5 p-0">
 			<a class = "hover-light-red" href = "artist/${song.artist.id}"><c:out value = "${song.artist.name}" /></a>

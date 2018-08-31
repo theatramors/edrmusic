@@ -5,7 +5,9 @@ import amors.entity.Song;
 import java.util.List;
 
 public interface SongService {
-    List<Song> getSongs(int start, int max);
-    
+    List<Song> findAll();
+
+    List<Song> findAll(int start, int end);
+
     Song findById(Long id);
 }

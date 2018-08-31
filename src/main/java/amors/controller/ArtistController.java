@@ -1,36 +1,37 @@
 package amors.controller;
 
+import amors.entity.Artist;
 import amors.service.api.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping(value = "/artists")
 public class ArtistController {
+    private final ArtistService artistService;
+
     @Autowired
-    private ArtistService service;
-    
-    @RequestMapping(value = "/artists", method = RequestMethod.GET)
-    public ModelAndView getArtists() {
-        ModelAndView modelAndView = new ModelAndView("artistsTab");
-        modelAndView.addObject("artists", service.getArtists(0, 20));
-        return modelAndView;
+    public ArtistController(ArtistService artistService) {
+        this.artistService = artistService;
     }
-    
-    // TODO Реализовать вкладку с артистом
-    @RequestMapping(value = "/artist/{id}", method = RequestMethod.GET)
-    public ModelAndView getArtist(@PathVariable Long id) {
-        return new ModelAndView();
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<Artist> getArtists() {
+        return artistService.getArtists();
     }
-    
-    // TODO Переделать получение логотипа артиста
-    @RequestMapping(value = "/artist/{id}/logo", method = RequestMethod.GET)
-    @ResponseBody
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Artist getArtist(@PathVariable Long id) {
+        return artistService.findById(id);
+    }
+
+    @RequestMapping(value = "/{id}/logo", method = RequestMethod.GET)
     public byte[] getArtistLogo(@PathVariable Long id) {
-        return service.getArtistLogo(id);
+        return artistService.getArtistLogo(id);
     }
 }

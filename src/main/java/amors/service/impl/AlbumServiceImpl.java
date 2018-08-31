@@ -1,4 +1,4 @@
-package amors.service;
+package amors.service.impl;
 
 import amors.entity.Album;
 import amors.repository.AlbumRepository;
@@ -15,23 +15,28 @@ import java.util.Objects;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
+    private final AlbumRepository repository;
+
     @Autowired
-    private AlbumRepository repository;
-    
+    public AlbumServiceImpl(AlbumRepository repository) {
+        this.repository = repository;
+    }
+
     @Override
+    @Transactional
     public List<Album> getAlbums(int start, int max) {
         Pageable size = PageRequest.of(start, max);
         Page<Album> all = repository.findAll(size);
         return all.getContent();
     }
-    
+
     @Override
+    @Transactional
     public Album findById(Long id) {
         return repository.findById(id).orElse(null);
     }
-    
+
     @Override
-    @Transactional
     public byte[] getAlbumCover(Long id) {
         return Objects.requireNonNull(repository.findById(id).orElse(null)).getFileContent().getFileContent();
     }
