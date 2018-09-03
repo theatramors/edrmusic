@@ -1,16 +1,14 @@
 package amors.service.impl;
 
-import amors.entity.Song;
-import amors.repository.SongRepository;
-import amors.service.api.SongService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import amors.entity.*;
+import amors.repository.*;
+import amors.service.api.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.data.domain.*;
+import org.springframework.stereotype.*;
 
-import javax.transaction.Transactional;
-import java.util.List;
+import javax.transaction.*;
+import java.util.*;
 
 @Service
 public class SongServiceImpl implements SongService {

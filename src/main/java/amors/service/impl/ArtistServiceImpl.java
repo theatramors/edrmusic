@@ -1,14 +1,13 @@
 package amors.service.impl;
 
-import amors.entity.Artist;
-import amors.repository.ArtistRepository;
-import amors.service.api.ArtistService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import amors.entity.*;
+import amors.repository.*;
+import amors.service.api.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
 
-import javax.transaction.Transactional;
-import java.util.List;
-import java.util.Objects;
+import javax.transaction.*;
+import java.util.*;
 
 @Service
 public class ArtistServiceImpl implements ArtistService {

@@ -1,11 +1,11 @@
 package amors.service.api;
 
-import amors.entity.Album;
+import amors.entity.*;
 
-import java.util.List;
+import java.util.*;
 
 public interface AlbumService {
-    List<Album> getAlbums(int start, int max);
+    List<Album> getAlbums();
 
     Album findById(Long id);
 

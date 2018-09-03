@@ -1,8 +1,8 @@
 package amors.service.api;
 
-import amors.entity.Song;
+import amors.entity.*;
 
-import java.util.List;
+import java.util.*;
 
 public interface SongService {
     List<Song> findAll();

@@ -1,11 +1,11 @@
 package amors.service.impl;
 
-import amors.entity.User;
-import amors.repository.UserRepository;
-import amors.service.api.UserService;
-import org.springframework.stereotype.Service;
+import amors.entity.*;
+import amors.repository.*;
+import amors.service.api.*;
+import org.springframework.stereotype.*;
 
-import javax.transaction.Transactional;
+import javax.transaction.*;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,15 +1,11 @@
 package amors.controller;
 
-import amors.entity.Album;
-import amors.service.api.AlbumService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import amors.entity.*;
+import amors.service.api.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping(value = "/albums")
@@ -23,7 +19,7 @@ public class AlbumController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Album> getAlbums() {
-        return albumService.getAlbums(0, 500);
+        return albumService.getAlbums();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

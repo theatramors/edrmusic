@@ -1,7 +1,7 @@
 package amors.repository;
 
-import amors.entity.Song;
-import org.springframework.data.jpa.repository.JpaRepository;
+import amors.entity.*;
+import org.springframework.data.jpa.repository.*;
 
 public interface SongRepository extends JpaRepository<Song, Long> {
 
