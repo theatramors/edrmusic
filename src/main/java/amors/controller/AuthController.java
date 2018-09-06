@@ -1,10 +1,13 @@
 package amors.controller;
 
-import amors.dto.*;
-import amors.service.api.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import amors.dto.AuthRequest;
+import amors.dto.AuthResponse;
+import amors.service.api.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AuthController {

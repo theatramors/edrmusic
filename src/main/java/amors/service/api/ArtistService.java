@@ -1,8 +1,8 @@
 package amors.service.api;
 
-import amors.entity.*;
+import amors.entity.Artist;
 
-import java.util.*;
+import java.util.List;
 
 public interface ArtistService {
     List<Artist> getArtists();

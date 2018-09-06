@@ -1,8 +1,8 @@
 package amors.service.api;
 
-import amors.entity.*;
+import amors.entity.Album;
 
-import java.util.*;
+import java.util.List;
 
 public interface AlbumService {
     List<Album> getAlbums();

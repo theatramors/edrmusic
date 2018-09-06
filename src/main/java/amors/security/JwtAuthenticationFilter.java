@@ -1,13 +1,15 @@
 package amors.security;
 
-import org.springframework.security.core.*;
-import org.springframework.security.web.authentication.*;
-import org.springframework.security.web.util.matcher.*;
-import org.springframework.stereotype.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
+import org.springframework.security.web.util.matcher.RequestMatcher;
+import org.springframework.stereotype.Component;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.io.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Component
 public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFilter {

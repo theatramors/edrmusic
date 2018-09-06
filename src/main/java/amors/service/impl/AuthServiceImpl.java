@@ -1,8 +1,9 @@
 package amors.service.impl;
 
-import amors.dto.*;
-import amors.service.api.*;
-import org.springframework.stereotype.*;
+import amors.dto.AuthRequest;
+import amors.dto.AuthResponse;
+import amors.service.api.AuthService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AuthServiceImpl implements AuthService {

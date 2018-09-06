@@ -1,13 +1,14 @@
 package amors.service.impl;
 
-import amors.entity.*;
-import amors.repository.*;
-import amors.service.api.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
+import amors.entity.Album;
+import amors.repository.AlbumRepository;
+import amors.service.api.AlbumService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.transaction.*;
-import java.util.*;
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Objects;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
