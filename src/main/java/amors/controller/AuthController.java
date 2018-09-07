@@ -5,9 +5,8 @@ import amors.dto.AuthResponse;
 import amors.service.api.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AuthController {
@@ -16,7 +15,7 @@ public class AuthController {
     @Autowired
     public AuthController(AuthService authService) {this.authService = authService;}
 
-    @RequestMapping(value = "auth", method = RequestMethod.POST)
+    @PostMapping(value = "/auth")
     public AuthResponse authenticateUser(@RequestBody AuthRequest authRequest) {
         if (authRequest != null) {
             return authService.authenticateUser(authRequest);

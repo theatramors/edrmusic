@@ -3,6 +3,6 @@
     <mvc:annotation-driven />
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <mvc:cors>
-        <mvc:mapping path="/**" allowed-origins="http://localhost:3000" />
+        <mvc:mapping path="/**" allowed-origins="*" allowed-methods="*" allowed-headers="*" max-age="3600" />
     </mvc:cors>
 </beans>
