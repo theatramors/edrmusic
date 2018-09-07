@@ -30,13 +30,13 @@ public class AuthServiceImpl implements AuthService {
             return new AuthResponse("Authentication failed");
         }
         User user = userService.findByUsername(authRequest.getUsername());
-        if (user == null && matchesPass(authRequest, user)) {
-            return new AuthResponse("Invalid username");
+        if (user != null && matchesPass(authRequest, user)) {
+            String token = generateToken(user);
+            tokens.put(user.getId(), new ValidatedUserToken(token));
+            System.out.println("Tokens in safe: " + tokens.size());
+            return new AuthResponse(token, "Authentication success");
         }
-        String token = generateToken(user);
-        tokens.put(user.getId(), new ValidatedUserToken(token));
-        System.out.println("Tokens in safe: " + tokens.size());
-        return new AuthResponse(token, "Authentication success");
+        return new AuthResponse("Invalid username");
     }
 
     private Boolean matchesPass(AuthRequest authRequest, User user) {
