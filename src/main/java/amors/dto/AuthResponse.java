@@ -2,14 +2,17 @@ package amors.dto;
 
 public class AuthResponse {
     private String token;
+    private boolean error;
     private String message;
 
-    public AuthResponse(String message) {
+    public AuthResponse(boolean error, String message) {
+        this.error = error;
         this.message = message;
     }
 
-    public AuthResponse(String token, String message) {
+    public AuthResponse(String token, boolean error, String message) {
         this.token = token;
+        this.error = error;
         this.message = message;
     }
 
@@ -19,6 +22,14 @@ public class AuthResponse {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public boolean isError() {
+        return error;
+    }
+
+    public void setError(boolean error) {
+        this.error = error;
     }
 
     public String getMessage() {

@@ -4,11 +4,11 @@ import amors.dto.AuthRequest;
 import amors.dto.AuthResponse;
 import amors.service.api.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class AuthController {
     private final AuthService authService;
 
@@ -20,6 +20,6 @@ public class AuthController {
         if (authRequest != null) {
             return authService.authenticateUser(authRequest);
         }
-        return new AuthResponse("Authentication failed");
+        return new AuthResponse(true, "Authentication failed");
     }
 }
